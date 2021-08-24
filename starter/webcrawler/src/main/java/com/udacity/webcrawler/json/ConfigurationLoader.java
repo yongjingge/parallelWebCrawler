@@ -32,7 +32,7 @@ public final class ConfigurationLoader {
   public CrawlerConfiguration load() {
     try (BufferedReader bufferedReader = Files.newBufferedReader(path)) {
       return read(bufferedReader);
-    } catch (Exception e) {
+    } catch (IOException e) {
       e.printStackTrace();
       return null;
     }
@@ -52,7 +52,7 @@ public final class ConfigurationLoader {
 
     try {
       return objectMapper.readValue(reader, CrawlerConfiguration.Builder.class).build();
-    } catch (Exception e) {
+    } catch (IOException e) {
       e.printStackTrace();
       return null;
     }
