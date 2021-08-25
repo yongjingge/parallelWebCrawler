@@ -75,4 +75,11 @@ final class ProfilingState {
     return String.format(
         "%sm %ss %sms", duration.toMinutes(), duration.toSecondsPart(), duration.toMillisPart());
   }
+
+  @Override
+  public String toString() {
+    return "ProfilingState{" +
+            "data=" + data +
+            '}';
+  }
 }
