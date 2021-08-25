@@ -26,7 +26,6 @@ final class WordCounts {
   static Map<String, Integer> sort(Map<String, Integer> wordCounts, int popularWordCount) {
 
     // Reimplement this method using only the Stream API and lambdas and/or method references.
-
     return wordCounts.entrySet()
             .stream()
             .filter(Objects::nonNull)
@@ -35,8 +34,6 @@ final class WordCounts {
             .collect(
                     Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (k, v) -> k, LinkedHashMap::new)
             );
-
-
 
 //    PriorityQueue<Map.Entry<String, Integer>> sortedCounts =
 //        new PriorityQueue<>(wordCounts.size(), new WordCountComparator());
@@ -48,8 +45,6 @@ final class WordCounts {
 //      topCounts.put(entry.getKey(), entry.getValue());
 //    }
 //    return topCounts;
-
-
   }
 
   /**
