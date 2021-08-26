@@ -33,7 +33,7 @@ final class ProfilingMethodInterceptor implements InvocationHandler {
      * For profiled methods, the interceptor should record the start time,
      * then invoke the method using the profiled object.
      * Finally, for profiled methods, the interceptor should record the method using the ProfilingState. */
-    if (method.getDeclaringClass().equals(Object.class) && method.getAnnotation(Profiled.class) != null) {
+    if (method.getAnnotation(Profiled.class) != null) {
       final Instant start = clock.instant();
       try {
         method.invoke(targetObject, args);
