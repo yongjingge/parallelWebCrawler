@@ -46,11 +46,12 @@ public final class CrawlTask extends RecursiveAction {
                 return;
             }
         }
-        if (visitedUrls.contains(url)) {
+
+        // update the visited urls set
+        if (! visitedUrls.add(url)) {
             return;
         }
-        // update the visited urls set
-        visitedUrls.add(url);
+
         PageParser.Result result = parserFactory.get(url).parse();
 
         // update the wordCounts map using atomic operation
